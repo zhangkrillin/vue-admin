@@ -244,7 +244,7 @@ export default {
   font-size: 12px;
 }
 .el-card {
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.16) !important;
 }
 
 .el-pagination,
