@@ -3,6 +3,7 @@ import App from './App.vue'
 import './plugins/element.js'
 import router from './router'
 import "./assets/css/global.css"
+
 /* 导入小图标 */
 import "./assets/fonts/iconfont.css"
 import axios from 'axios'
