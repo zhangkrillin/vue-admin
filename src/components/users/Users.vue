@@ -37,9 +37,9 @@
         </el-table-column>
         <el-table-column label="操作" width="190px">
           <!-- 自定义组件 -->
-          <template slot-scope>
+          <template slot-scope="scope">
             <!-- 修改按钮 -->
-            <el-button type="primary" icon="el-icon-edit" size="mini"></el-button>
+            <el-button type="primary" icon="el-icon-edit" size="mini" @click="showEditDialog(scope.row.id)"></el-button>
             <!-- 删除按钮 -->
             <el-button type="danger" icon="el-icon-delete" size="mini"></el-button>
             <!-- 分配角色按钮 -->
@@ -87,6 +87,14 @@
         <el-button type="primary" @click="addUser">确 定</el-button>
       </span>
     </el-dialog>
+    <!-- 用户修改按钮 dialog -->
+    <el-dialog title="修改用户" :visible.sync="editDialog" width="50%" >
+      <span>这是一段信息</span>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="editDialog = false">取 消</el-button>
+        <el-button type="primary" @click="editDialog = false">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -121,6 +129,7 @@ export default {
       userList: [],
       total: 0,
       dialogVisible: false,
+      editDialog: false,
       //添加用户表单数据
       addForm: {
         username: "",
@@ -218,6 +227,12 @@ export default {
         //刷新列表
         this.getUserList();
       });
+    },
+    //展示编辑用户的修改框
+    showEditDialog(id) {
+      this.editDialog = true
+      console.log(id)
+      
     }
   }
 };
