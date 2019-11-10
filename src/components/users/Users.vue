@@ -21,7 +21,7 @@
         </el-col>
       </el-row>
       <!-- 用户列表 -->
-      <el-table :data="userList" border>
+      <el-table :data="userList" border stripe>
         <!-- 添加索引 -->
         <el-table-column type="index"></el-table-column>
         <el-table-column prop="username" label="姓名"></el-table-column>
@@ -328,16 +328,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.el-breadcrumb {
-  margin-bottom: 15px;
-  font-size: 12px;
-}
-.el-card {
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.16) !important;
-}
 
-.el-pagination,
-.el-table {
-  margin-top: 15px;
-}
 </style>
