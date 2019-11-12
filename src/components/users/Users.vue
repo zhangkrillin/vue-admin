@@ -365,9 +365,7 @@ export default {
       this.userInfo = info;
       //获取角色列表
       const { data: res } = await this.$http.get("roles");
-      console.log(res);
       this.userRightsList = res.data;
-
       this.setRightsDialogVisible = true;
     },
     //设置修改分配角色
