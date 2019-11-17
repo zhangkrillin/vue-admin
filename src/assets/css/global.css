@@ -30,3 +30,6 @@ body,
 .ql-editor {
   min-height: 300px;
 }
+.el-select__tags-text {
+  font-size: 14px;
+}

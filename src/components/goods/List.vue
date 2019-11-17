@@ -28,7 +28,7 @@
         <el-table-column prop="goods_price" label="商品价格(元)" width="110px"></el-table-column>
         <el-table-column prop="goods_weight" label="商品重量" width="80px"></el-table-column>
         <el-table-column prop="upd_time" label="创建时间" width="180px">
-          <template slot-scope="scope">{{scope.row.upd_time | fomatDate}}</template>
+          <template slot-scope="scope">{{scope.row.upd_time | formatDate}}</template>
         </el-table-column>
         <el-table-column label="操作" width="200px">
           <template slot-scope="scope">
@@ -42,18 +42,18 @@
           </template>
         </el-table-column>
       </el-table>
+      <!-- pagination 完整分页 -->
+      <el-pagination
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page="paramsInfo.pagenum"
+        :page-sizes="[5, 10, 25, 30]"
+        :page-size="paramsInfo.pagesize"
+        layout="total, sizes, prev, pager, next, jumper"
+        :total="total"
+        background
+      ></el-pagination>
     </el-card>
-    <!-- pagination 完整分页 -->
-    <el-pagination
-      @size-change="handleSizeChange"
-      @current-change="handleCurrentChange"
-      :current-page="paramsInfo.pagenum"
-      :page-sizes="[5, 10, 25, 30]"
-      :page-size="paramsInfo.pagesize"
-      layout="total, sizes, prev, pager, next, jumper"
-      :total="total"
-      background
-    ></el-pagination>
   </div>
 </template>
 
@@ -107,14 +107,14 @@ export default {
         return this.$message.info("已取消删除该商品列表!");
       }
       const { data: res } = await this.$http.delete(`goods/${id}`);
-      if(res.meta.status !==200){
-        return this.$message.error('删除该商品列表失败!')
+      if (res.meta.status !== 200) {
+        return this.$message.error("删除该商品列表失败!");
       }
-      this.$message.success('已成功删除该商品列表')
-      this.getGoodsList()
+      this.$message.success("已成功删除该商品列表");
+      this.getGoodsList();
     },
-    goGoodsList(){
-      this.$router.push('/goods/add')
+    goGoodsList() {
+      this.$router.push("/goods/add");
     }
   }
 };

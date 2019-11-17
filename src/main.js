@@ -12,8 +12,9 @@ import VueQuillEditor from 'vue-quill-editor'
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
-
 Vue.use(VueQuillEditor)
+import elCascaderMulti from "el-cascader-multi";
+Vue.use(elCascaderMulti);
 import axios from 'axios'
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
 axios.interceptors.request.use(config => {
@@ -24,7 +25,7 @@ axios.interceptors.request.use(config => {
 })
 Vue.prototype.$http = axios
 Vue.component('tree-table', TreeTable)
-Vue.filter('fomatDate', function (getDate) {
+Vue.filter('formatDate', function (getDate) {
   const date = new Date(getDate)
   let y = date.getFullYear()
   y = y < 10 ? '0' + y : y

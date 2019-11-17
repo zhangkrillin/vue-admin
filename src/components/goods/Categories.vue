@@ -204,7 +204,7 @@ export default {
       if (res.meta.status !== 200) {
         return this.$message.error("获取父级分类数据失败！");
       }
-      this.parentCateList = res.data;
+      this.parentCateList = res.data
     },
     //选择项发生改变时触发的函数
     parentCateChanged() {
