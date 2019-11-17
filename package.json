@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "core-js": "^3.3.2",
+    "echarts": "^4.4.0",
     "el-cascader-multi": "^1.1.8",
     "element-ui": "^2.4.5",
     "lodash": "^4.17.15",
