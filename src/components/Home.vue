@@ -3,6 +3,7 @@
     <!-- 头部区域 -->
     <el-header>
       <div>
+        <i class="el-icon-menu icon-btn"></i>
         <span>电商后台管理系统</span>
       </div>
       <el-button type="info" @click="goback">退出</el-button>
@@ -93,12 +94,12 @@ export default {
     //保存链接的激活状态
     saveNavState(activePath) {
       window.sessionStorage.setItem("activePath", activePath);
-      this.activePath = activePath
+      this.activePath = activePath;
     }
   },
   created() {
     this.getMenuList();
-    this.activePath = window.sessionStorage.getItem('activePath')
+    this.activePath = window.sessionStorage.getItem("activePath");
   }
 };
 </script>
@@ -118,8 +119,10 @@ export default {
   > div {
     display: flex;
     align-items: center;
-    span {
-      margin-left: 15px;
+    .icon-btn {
+      width: 50px;
+      margin-left: 20px;
+      display: inline-block;
     }
   }
 }
